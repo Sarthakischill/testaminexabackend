@@ -1,6 +1,7 @@
 import { MetadataRoute } from "next";
+import { siteConfig } from "@/config/site";
 
-const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://aminexa.net";
+const BASE_URL = siteConfig.url;
 
 export default function robots(): MetadataRoute.Robots {
   return {

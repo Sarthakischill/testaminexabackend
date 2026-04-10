@@ -23,6 +23,7 @@ import {
   AlertTriangle,
   Info,
 } from "lucide-react";
+import { siteConfig } from "@/config/site";
 
 type OrderItem = {
   product_id: string;
@@ -313,8 +314,8 @@ export default function AdminOrderDetailPage({
           <div className="flex items-center gap-4">
             <div className="relative w-10 h-10">
               <Image
-                src="https://imagedelivery.net/uVeQjPq2FGwRQ4qZs2ijJg/Logos/AmiNexa/AmiNexa_favicon_128_white.png/public"
-                alt="AmiNexa"
+                src={siteConfig.faviconUrl || "/favicon.svg"}
+                alt={siteConfig.name}
                 fill
                 sizes="40px"
                 className="object-contain"

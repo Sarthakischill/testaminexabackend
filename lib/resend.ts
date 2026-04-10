@@ -1,4 +1,5 @@
 import { Resend } from "resend";
+import { siteConfig } from "@/config/site";
 
 let _resend: Resend | null = null;
 
@@ -9,4 +10,4 @@ export function getResend(): Resend {
   return _resend;
 }
 
-export const FROM_EMAIL = "AmiNexa <noreply@aminexa.net>";
+export const FROM_EMAIL = siteConfig.fromEmail;

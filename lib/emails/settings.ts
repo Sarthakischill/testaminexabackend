@@ -1,4 +1,5 @@
 import { createAdminClient } from "@/lib/supabase/admin";
+import { siteConfig } from "@/config/site";
 
 export type EmailSettingId =
   | "order_notification"
@@ -14,8 +15,8 @@ type EmailSetting = {
 };
 
 const FALLBACK_RECIPIENTS: Record<EmailSettingId, string[]> = {
-  order_notification: ["peptides.solutions@gmail.com", "contact@aminexa.net"],
-  contact_form: ["peptides.solutions@gmail.com", "contact@aminexa.net"],
+  order_notification: siteConfig.fallbackRecipients,
+  contact_form: siteConfig.fallbackRecipients,
   order_confirmed: [],
   order_shipped: [],
   order_received: [],

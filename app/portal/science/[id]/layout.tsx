@@ -1,8 +1,9 @@
 import type { Metadata } from "next";
+import { siteConfig } from "@/config/site";
 import { researchData } from "@/lib/research-data";
 import { getProduct } from "@/lib/products";
 
-const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://aminexa.net";
+const BASE_URL = siteConfig.url;
 
 type Props = {
   params: Promise<{ id: string }>;
@@ -24,14 +25,14 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     title,
     description,
     openGraph: {
-      title: `${research.headline} — Peptide Research & Science | AmiNexa`,
+      title: `${research.headline} — Peptide Research & Science | ${siteConfig.name}`,
       description,
       type: "article",
       url: `${BASE_URL}/portal/science/${id}`,
     },
     twitter: {
       card: "summary_large_image",
-      title: `${research.headline} Research | AmiNexa`,
+      title: `${research.headline} Research | ${siteConfig.name}`,
       description: research.subheadline.slice(0, 150),
     },
     alternates: {

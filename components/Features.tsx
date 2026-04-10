@@ -4,6 +4,7 @@ import { useRef, useEffect } from "react";
 import { motion, useInView, useMotionValue, useTransform, animate } from "framer-motion";
 import Image from "next/image";
 import { ArrowRight } from "lucide-react";
+import { siteConfig } from "@/config/site";
 
 const MetricCard = ({ title, value, desc, index, iconPath }: { title: string, value: string, desc: string, index: number, iconPath?: string }) => {
   const ref = useRef<HTMLDivElement>(null);
@@ -150,7 +151,7 @@ export default function Features() {
         </div>
       </div>
 
-      {/* --- Why AmiNexa Section --- */}
+      {/* --- Why Us Section --- */}
       <div className="relative w-full px-4 sm:px-6 md:px-10 lg:px-14 xl:px-20 pt-40 md:pt-56">
         <motion.div 
           initial={{ opacity: 0, y: 30 }}
@@ -160,7 +161,7 @@ export default function Features() {
           className="mb-16 md:mb-24 flex flex-col items-center text-center"
         >
           <h2 style={{ fontFamily: 'Helvetica, Arial, sans-serif' }} className="text-[8vw] md:text-[6vw] lg:text-[5vw] font-normal tracking-[-0.04em] leading-[0.85] text-white">
-            Why AmiNexa?
+            Why {siteConfig.name}?
           </h2>
           <p style={{ fontFamily: 'Helvetica, Arial, sans-serif' }} className="text-lg md:text-xl text-white/60 font-light tracking-wide max-w-2xl mt-6">
             We refuse to compromise on quality, purity, or stability. Discover the standard that separates clinical-grade synthesis from generic compounding.

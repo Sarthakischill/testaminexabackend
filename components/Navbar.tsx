@@ -7,6 +7,7 @@ import { useRouter } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
 import { ArrowUpRight, LogOut, Lock } from "lucide-react";
 import { createClient } from "@/lib/supabase/client";
+import { siteConfig } from "@/config/site";
 
 interface NavbarProps {
   isPortal?: boolean;
@@ -69,8 +70,8 @@ export default function Navbar({ isPortal = false, cartCount = 0, cartColor = "#
           <div className="flex items-center gap-3 md:gap-4 pointer-events-auto z-[100]">
             <Link href={isPortal ? "/portal" : "/"} className="relative w-10 md:w-12 lg:w-14 h-10 md:h-12 lg:h-14 shrink-0 transition-transform hover:rotate-180 duration-700 ease-in-out">
               <Image 
-                src="https://imagedelivery.net/uVeQjPq2FGwRQ4qZs2ijJg/Logos/AmiNexa/AmiNexa_favicon_128_white.png/public" 
-                alt="AmiNexa Icon" 
+                src={siteConfig.faviconUrl || "/favicon.svg"} 
+                alt={`${siteConfig.name} Icon`} 
                 fill
                 sizes="(max-width: 768px) 40px, (max-width: 1024px) 48px, 56px" 
                 className="object-contain object-left"
@@ -80,8 +81,8 @@ export default function Navbar({ isPortal = false, cartCount = 0, cartColor = "#
             {/* Mobile Logotype */}
             <Link href={isPortal ? "/portal" : "/"} className="relative w-20 h-4 sm:w-24 sm:h-5 md:hidden shrink-0 transition-transform hover:scale-105">
               <Image 
-                src="https://imagedelivery.net/uVeQjPq2FGwRQ4qZs2ijJg/Logos/AmiNexa/AmiNexa_logotype_white.png/public" 
-                alt="AmiNexa" 
+                src={siteConfig.logoUrl || "/logo.svg"} 
+                alt={siteConfig.name} 
                 fill
                 sizes="(max-width: 640px) 80px, 96px" 
                 className="object-contain object-left"
@@ -94,8 +95,8 @@ export default function Navbar({ isPortal = false, cartCount = 0, cartColor = "#
           <div className="absolute left-1/2 -translate-x-1/2 top-1/2 -translate-y-1/2 hidden md:block transition-transform hover:scale-105 pointer-events-auto">
             <Link href={isPortal ? "/portal" : "/"} className="relative w-24 md:w-28 lg:w-32 h-5 md:h-6 lg:h-7 block">
               <Image 
-                src="https://imagedelivery.net/uVeQjPq2FGwRQ4qZs2ijJg/Logos/AmiNexa/AmiNexa_logotype_white.png/public" 
-                alt="AmiNexa" 
+                src={siteConfig.logoUrl || "/logo.svg"} 
+                alt={siteConfig.name} 
                 fill
                 sizes="(max-width: 1024px) 112px, 128px" 
                 className="object-contain"

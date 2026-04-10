@@ -1,5 +1,6 @@
 "use client";
 
+import { siteConfig } from "@/config/site";
 import React from "react";
 import { motion } from "framer-motion";
 import Image from "next/image";
@@ -63,7 +64,7 @@ export default function ScienceIndexPage() {
             style={{ fontFamily: 'Helvetica, Arial, sans-serif' }}
             className="text-lg md:text-xl text-white/50 font-light tracking-wide max-w-2xl mx-auto"
           >
-            Explore peer-reviewed research, mechanism data, and clinical findings for every compound in the AmiNexa catalog.
+            {`Explore peer-reviewed research, mechanism data, and clinical findings for every compound in the ${siteConfig.name} catalog.`}
           </motion.p>
         </div>
       </div>

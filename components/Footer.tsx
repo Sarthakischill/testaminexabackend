@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import { siteConfig } from "@/config/site";
 
 export default function Footer() {
   return (
@@ -14,8 +15,8 @@ export default function Footer() {
             <div className="xl:w-5/12 flex flex-col sm:flex-row items-start gap-6 sm:gap-10">
               <Link href="/" className="relative w-40 h-10 shrink-0 transition-opacity hover:opacity-70 duration-500">
                 <Image 
-                  src="https://imagedelivery.net/uVeQjPq2FGwRQ4qZs2ijJg/Logos/AmiNexa/AmiNexa_full_logo_white.png/public" 
-                  alt="AmiNexa" 
+                  src={siteConfig.logoUrl || "/logo.svg"} 
+                  alt={siteConfig.name} 
                   fill
                   sizes="160px" 
                   className="object-contain object-left"
@@ -91,7 +92,7 @@ export default function Footer() {
           </div>
           
           <div className="pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-4 text-[10px] md:text-xs text-white/30 font-bold tracking-[0.2em] uppercase" style={{ fontFamily: 'Helvetica, Arial, sans-serif' }}>
-            <p>© 2026 AmiNexa. All rights reserved.</p>
+            <p>© {new Date().getFullYear()} {siteConfig.name}. All rights reserved.</p>
             <div className="flex items-center gap-2">
                <div className="w-1.5 h-1.5 rounded-full bg-blue-500 shadow-[0_0_8px_rgba(59,130,246,0.8)]" />
                <p>Engineered in Munich, DE.</p>

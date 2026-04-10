@@ -2,6 +2,7 @@ import { NextResponse } from "next/server";
 import { getResend, FROM_EMAIL } from "@/lib/resend";
 import { getEmailSetting } from "@/lib/emails/settings";
 import { emailWrapper, emailHeading, emailSubtext, emailCard, emailLabel, emailButton } from "@/lib/emails/template";
+import { siteConfig } from "@/config/site";
 
 const SUBJECT_MAP: Record<string, string> = {
   order: "Order Inquiry",
@@ -49,7 +50,7 @@ export async function POST(request: Request) {
       subject: `Contact Form: ${subjectLabel} — from ${name}`,
       html: emailWrapper(`
         ${emailHeading("New Contact Form Submission")}
-        ${emailSubtext("Received from the AmiNexa website contact page.")}
+        ${emailSubtext(`Received from the ${siteConfig.name} website contact page.`)}
 
         ${emailCard(`
           <table style="width: 100%; border-collapse: collapse; font-family: Helvetica, Arial, sans-serif;">

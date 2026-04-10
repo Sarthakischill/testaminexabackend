@@ -1,4 +1,5 @@
 import { createAdminClient } from "@/lib/supabase/admin";
+import { siteConfig } from "@/config/site";
 
 const INTUIT_AUTH_URL = "https://appcenter.intuit.com/connect/oauth2";
 const INTUIT_TOKEN_URL = "https://oauth.platform.intuit.com/oauth2/v1/tokens/bearer";
@@ -334,9 +335,9 @@ export async function createInvoice(
     AutoDocNumber: true,
     Line: lineItems,
     CustomerMemo: {
-      value: `AmiNexa Order ${order.order_number || order.id.slice(0, 8).toUpperCase()}`,
+      value: `${siteConfig.name} Order ${order.order_number || order.id.slice(0, 8).toUpperCase()}`,
     },
-    PrivateNote: `AmiNexa Order ID: ${order.id}`,
+    PrivateNote: `${siteConfig.name} Order ID: ${order.id}`,
   };
 
   const res = await qboFetch("/invoice", {

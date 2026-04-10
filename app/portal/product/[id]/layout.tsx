@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
+import { siteConfig } from "@/config/site";
 import { getProduct, products } from "@/lib/products";
 
-const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://aminexa.net";
+const BASE_URL = siteConfig.url;
 
 type Props = {
   params: Promise<{ id: string }>;
@@ -25,7 +26,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     title,
     description,
     openGraph: {
-      title: `${product.name} ${product.volume} — ${product.purity} Purity | AmiNexa`,
+      title: `${product.name} ${product.volume} — ${product.purity} Purity | ${siteConfig.name}`,
       description,
       type: "website",
       url: `${BASE_URL}/portal/product/${id}`,
@@ -33,7 +34,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     },
     twitter: {
       card: "summary_large_image",
-      title: `Buy ${product.name} ${product.volume} | AmiNexa`,
+      title: `Buy ${product.name} ${product.volume} | ${siteConfig.name}`,
       description: `${product.purity} purity ${product.name} — ${product.description.slice(0, 100)}`,
     },
     alternates: {

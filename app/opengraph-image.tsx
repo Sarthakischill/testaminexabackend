@@ -1,7 +1,8 @@
 import { ImageResponse } from "next/og";
+import { siteConfig } from "@/config/site";
 
 export const runtime = "edge";
-export const alt = "AmiNexa — Buy Research Peptides Online | BPC-157, GHK-Cu, NAD+, GLP-3 | 99%+ Purity";
+export const alt = `${siteConfig.name} — Buy Research Peptides Online | BPC-157, GHK-Cu, NAD+, GLP-3 | 99%+ Purity`;
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
@@ -62,7 +63,7 @@ export default async function Image() {
               lineHeight: 1,
             }}
           >
-            AmiNexa
+            {siteConfig.name}
           </div>
           <div
             style={{
@@ -73,7 +74,7 @@ export default async function Image() {
               textTransform: "uppercase" as const,
             }}
           >
-            Premium Research Peptides
+            {siteConfig.tagline}
           </div>
           <div
             style={{
@@ -122,7 +123,7 @@ export default async function Image() {
               boxShadow: "0 0 8px rgba(59,130,246,0.8)",
             }}
           />
-          Research Peptides · Cold-Chain Shipped · aminexa.net
+          {`Research Peptides · Cold-Chain Shipped · ${siteConfig.url.replace(/^https?:\/\//, "")}`}
         </div>
       </div>
     ),

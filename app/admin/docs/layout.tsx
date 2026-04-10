@@ -1,8 +1,9 @@
 import type { Metadata } from "next";
+import { siteConfig } from "@/config/site";
 
 export const metadata: Metadata = {
-  title: "AmiNexa Admin | Operations Handbook",
-  description: "Internal operations documentation for AmiNexa admin staff",
+  title: `${siteConfig.name} Admin | Operations Handbook`,
+  description: `Internal operations documentation for ${siteConfig.name} admin staff`,
   robots: {
     index: false,
     follow: false,

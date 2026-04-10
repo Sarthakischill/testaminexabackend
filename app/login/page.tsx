@@ -7,6 +7,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { ArrowLeft, ArrowRight, Check, AlertCircle, Loader2, Mail, Eye, EyeOff } from "lucide-react";
 import { createClient } from "@/lib/supabase/client";
+import { siteConfig } from "@/config/site";
 
 const InputField = ({
   label,
@@ -312,7 +313,7 @@ export default function LoginPage() {
       <div className="relative z-10 w-full max-w-[1200px] flex flex-col lg:flex-row items-center lg:items-start justify-between px-4 sm:px-6 py-20 md:py-24 gap-8 md:gap-16 lg:gap-24">
         <div className="flex flex-col w-full lg:w-1/2 mt-4 md:mt-0">
           <div className="relative w-24 md:w-40 h-6 md:h-10 mb-8 md:mb-12">
-            <Image src="https://imagedelivery.net/uVeQjPq2FGwRQ4qZs2ijJg/Logos/AmiNexa/AmiNexa_full_logo_white.png/public" alt="AmiNexa" fill className="object-contain object-left" priority />
+            <Image src={siteConfig.logoUrl || "/logo.svg"} alt={siteConfig.name} fill className="object-contain object-left" priority />
           </div>
 
           <h1
@@ -326,7 +327,7 @@ export default function LoginPage() {
           <div className="hidden lg:flex items-start gap-4 p-6 rounded-2xl bg-white/[0.02] border border-white/5 mt-8 backdrop-blur-sm">
             <AlertCircle className="w-6 h-6 text-white/40 shrink-0 mt-0.5" />
             <p style={{ fontFamily: "Helvetica, Arial, sans-serif" }} className="text-white/60 text-sm leading-relaxed font-light">
-              AmiNexa provides pharmaceutical-grade peptides for laboratory and research use only. Creating an account requires acknowledgment of our Terms of Use and age verification. Not intended for human or veterinary use.
+              {`${siteConfig.name} provides pharmaceutical-grade peptides for laboratory and research use only. Creating an account requires acknowledgment of our Terms of Use and age verification. Not intended for human or veterinary use.`}
             </p>
           </div>
         </div>
@@ -669,7 +670,7 @@ export default function LoginPage() {
         <div className="flex lg:hidden items-start gap-3 p-4 md:p-6 rounded-2xl bg-white/[0.02] border border-white/5 backdrop-blur-sm w-full max-w-md mx-auto mb-12">
           <AlertCircle className="w-5 h-5 md:w-6 md:h-6 text-white/40 shrink-0 mt-0.5" />
           <p style={{ fontFamily: "Helvetica, Arial, sans-serif" }} className="text-white/60 text-xs md:text-sm leading-relaxed font-light">
-            AmiNexa provides pharmaceutical-grade peptides for laboratory and research use only. Creating an account requires acknowledgment of our Terms of Use and age verification. Not intended for human or veterinary use.
+            {`${siteConfig.name} provides pharmaceutical-grade peptides for laboratory and research use only. Creating an account requires acknowledgment of our Terms of Use and age verification. Not intended for human or veterinary use.`}
           </p>
         </div>
       </div>

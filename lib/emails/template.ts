@@ -1,4 +1,4 @@
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://aminexa.net";
+import { siteConfig } from "@/config/site";
 
 export function emailWrapper(content: string): string {
   return `
@@ -9,9 +9,9 @@ export function emailWrapper(content: string): string {
   <div style="max-width: 600px; margin: 0 auto; padding: 32px 16px;">
     <!-- Header -->
     <div style="text-align: center; padding: 32px 0 24px;">
-      <a href="${siteUrl}" style="text-decoration: none;">
-        <h1 style="font-family: Helvetica, Arial, sans-serif; font-size: 26px; font-weight: 400; letter-spacing: -0.01em; color: #000; margin: 0;">AmiNexa</h1>
-        <p style="font-family: Helvetica, Arial, sans-serif; font-size: 10px; letter-spacing: 0.25em; text-transform: uppercase; color: #999; margin: 6px 0 0;">Premium Research Peptides</p>
+      <a href="${siteConfig.url}" style="text-decoration: none;">
+        <h1 style="font-family: Helvetica, Arial, sans-serif; font-size: 26px; font-weight: 400; letter-spacing: -0.01em; color: #000; margin: 0;">${siteConfig.name}</h1>
+        <p style="font-family: Helvetica, Arial, sans-serif; font-size: 10px; letter-spacing: 0.25em; text-transform: uppercase; color: #999; margin: 6px 0 0;">${siteConfig.tagline}</p>
       </a>
     </div>
 
@@ -23,9 +23,9 @@ export function emailWrapper(content: string): string {
     <!-- Footer -->
     <div style="text-align: center; padding: 28px 0 8px;">
       <p style="font-family: Helvetica, Arial, sans-serif; font-size: 11px; color: #bbb; line-height: 1.8; margin: 0;">
-        AmiNexa — Premium Research Peptides<br/>
-        For research use only. Not intended for human consumption.<br/>
-        <a href="${siteUrl}" style="color: #999; text-decoration: underline;">aminexa.net</a>
+        ${siteConfig.name} — ${siteConfig.tagline}<br/>
+        ${siteConfig.legalDisclaimer}<br/>
+        <a href="${siteConfig.url}" style="color: #999; text-decoration: underline;">${siteConfig.url.replace(/^https?:\/\//, "")}</a>
       </p>
     </div>
   </div>

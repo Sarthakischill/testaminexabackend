@@ -24,6 +24,7 @@ import {
 import { createClient } from "@/lib/supabase/client";
 import { useRouter } from "next/navigation";
 import { toast } from "sonner";
+import { siteConfig } from "@/config/site";
 
 type DbProduct = {
   id: string;
@@ -333,7 +334,7 @@ export default function AdminProductsPage() {
             <Link href="/admin" className="flex items-center gap-3 text-white/40 hover:text-white transition-colors group">
               <ArrowLeft className="w-4 h-4 group-hover:-translate-x-1 transition-transform" />
               <div className="relative w-10 h-10">
-                <Image src="https://imagedelivery.net/uVeQjPq2FGwRQ4qZs2ijJg/Logos/AmiNexa/AmiNexa_favicon_128_white.png/public" alt="AmiNexa" fill className="object-contain" />
+                <Image src={siteConfig.faviconUrl || "/favicon.svg"} alt={siteConfig.name} fill className="object-contain" />
               </div>
             </Link>
             <div>

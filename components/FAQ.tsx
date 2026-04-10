@@ -3,13 +3,14 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ChevronDown } from "lucide-react";
+import { siteConfig } from "@/config/site";
 
 export type FAQItem = { question: string; answer: string };
 
 export const generalFaqs: FAQItem[] = [
   {
     question: "What purity level are your peptides and how is it verified?",
-    answer: "AmiNexa mandates a minimum 99.4%+ optical purity for all compounds. Every batch is subjected to rigorous independent HPLC and LC-MS analysis. Certificates of Analysis (CoA) are available for cross-referencing in our portal."
+    answer: `${siteConfig.name} mandates a minimum 99.4%+ optical purity for all compounds. Every batch is subjected to rigorous independent HPLC and LC-MS analysis. Certificates of Analysis (CoA) are available for cross-referencing in our portal.`
   },
   {
     question: "What is a Certificate of Analysis (CoA) and how do I read it?",
@@ -29,7 +30,7 @@ export const generalFaqs: FAQItem[] = [
   },
   {
     question: "Are these peptides for human use?",
-    answer: "No. All AmiNexa products are sold strictly for laboratory research and educational purposes only. They are not intended for human consumption, diagnostic, or therapeutic procedures."
+    answer: `No. All ${siteConfig.name} products are sold strictly for laboratory research and educational purposes only. They are not intended for human consumption, diagnostic, or therapeutic procedures.`
   }
 ];
 

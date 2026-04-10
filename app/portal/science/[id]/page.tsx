@@ -1,5 +1,6 @@
 "use client";
 
+import { siteConfig } from "@/config/site";
 import React, { use, useEffect, useLayoutEffect } from "react";
 import { motion } from "framer-motion";
 import Image from "next/image";
@@ -830,7 +831,7 @@ export default function ScienceDetailPage({ params }: { params: Promise<{ id: st
               Ready to begin research?
             </h2>
             <p style={{ fontFamily: "Helvetica, Arial, sans-serif" }} className="text-lg md:text-xl text-white/50 font-light tracking-wide mb-12 max-w-xl mx-auto">
-              Access {product.name} through the AmiNexa catalog. All compounds ship via cold-chain transit with batch-specific Certificate of Analysis.
+              {`Access ${product.name} through the ${siteConfig.name} catalog. All compounds ship via cold-chain transit with batch-specific Certificate of Analysis.`}
             </p>
 
             <Link

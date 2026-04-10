@@ -3,6 +3,7 @@
 import { useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { ShieldAlert, Snowflake, Microscope } from "lucide-react";
+import { siteConfig } from "@/config/site";
 
 export default function LandingStory() {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -90,7 +91,7 @@ export default function LandingStory() {
              Unbroken <br/> <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-100 to-[#112A46]">Cold Chain</span>
           </h3>
           <p className="text-lg md:text-2xl text-white/50 max-w-2xl font-light tracking-wide leading-relaxed">
-            Peptides degrade under heat. While others ship in standard envelopes, every AmiNexa order is packed in insulated cold-shippers with advanced refrigerants to preserve complete molecular integrity.
+            Peptides degrade under heat. While others ship in standard envelopes, every {siteConfig.name} order is packed in insulated cold-shippers with advanced refrigerants to preserve complete molecular integrity.
           </p>
         </motion.div>
 

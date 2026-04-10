@@ -6,6 +6,7 @@ import { Mail, MapPin, Clock, Send, CheckCircle } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { useCart } from "@/lib/cart-context";
+import { siteConfig } from "@/config/site";
 
 export default function ContactPage() {
   const { totalItems, openCart } = useCart();
@@ -84,7 +85,7 @@ export default function ContactPage() {
           {/* Info Cards */}
           <div className="lg:col-span-2 flex flex-col gap-5">
             {[
-              { icon: Mail, label: "Email", value: "support@aminexa.net", sublabel: "General inquiries" },
+              { icon: Mail, label: "Email", value: siteConfig.supportEmail, sublabel: "General inquiries" },
               { icon: MapPin, label: "Location", value: "United States", sublabel: "Ships domestically" },
               { icon: Clock, label: "Response Time", value: "Within 24 hours", sublabel: "Monday – Friday" },
             ].map((item, idx) => (

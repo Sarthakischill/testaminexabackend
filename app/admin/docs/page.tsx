@@ -9,6 +9,7 @@ import {
   X,
   BookOpen,
 } from "lucide-react";
+import { siteConfig } from "@/config/site";
 
 const font = { fontFamily: "Helvetica, Arial, sans-serif" } as const;
 
@@ -32,7 +33,7 @@ const SECTIONS: Section[] = [
       {
         id: "logging-in",
         title: "Logging In",
-        content: `To access the admin panel, go to <strong>aminexa.net/login</strong> and sign in with your admin credentials. Once logged in, you'll be taken to the <strong>Admin Dashboard</strong> where you can manage orders, products, and more.\n\nIf you don't have admin access, ask the account owner to grant you admin permissions through Supabase.`,
+        content: `To access the admin panel, go to <strong>${siteConfig.url.replace(/^https?:\/\//, "")}/login</strong> and sign in with your admin credentials. Once logged in, you'll be taken to the <strong>Admin Dashboard</strong> where you can manage orders, products, and more.\n\nIf you don't have admin access, ask the account owner to grant you admin permissions through Supabase.`,
       },
       {
         id: "dashboard-overview",
@@ -272,7 +273,7 @@ const SECTIONS: Section[] = [
       {
         id: "customer-browsing",
         title: "Browsing and Shopping",
-        content: `Customers browse products at <strong>aminexa.net/portal</strong>. They can:\n\n• View products by category (Vials, Pens)\n• Read detailed product pages with descriptions, benefits, and FAQs\n• Explore the Science Library for research information on each compound\n• Add products to their cart\n\nProducts marked as "Coming Soon" show a badge instead of an "Add to Cart" button. Sold out products cannot be added to the cart.`,
+        content: `Customers browse products at <strong>${siteConfig.url.replace(/^https?:\/\//, "")}/portal</strong>. They can:\n\n• View products by category (Vials, Pens)\n• Read detailed product pages with descriptions, benefits, and FAQs\n• Explore the Science Library for research information on each compound\n• Add products to their cart\n\nProducts marked as "Coming Soon" show a badge instead of an "Add to Cart" button. Sold out products cannot be added to the cart.`,
       },
       {
         id: "customer-cart",
@@ -433,8 +434,8 @@ export default function AdminDocsPage() {
           <div className="flex items-center gap-4">
             <div className="relative w-10 h-10">
               <Image
-                src="https://imagedelivery.net/uVeQjPq2FGwRQ4qZs2ijJg/Logos/AmiNexa/AmiNexa_favicon_128_white.png/public"
-                alt="AmiNexa"
+                src={siteConfig.faviconUrl || "/favicon.svg"}
+                alt={siteConfig.name}
                 fill
                 sizes="40px"
                 className="object-contain"
@@ -589,7 +590,7 @@ export default function AdminDocsPage() {
                     style={font}
                     className="text-xs text-white/30 tracking-wide"
                   >
-                    Everything you need to know to manage AmiNexa
+                    Everything you need to know to manage {siteConfig.name}
                   </p>
                 </div>
               </div>

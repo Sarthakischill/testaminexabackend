@@ -1,8 +1,10 @@
+import { siteConfig } from "@/config/site";
+
 const API_BASE_V1 = "https://ssapi.shipstation.com";
 
 function getOriginAddress() {
   return {
-    name: process.env.SHIPSTATION_FROM_NAME || "AmiNexa",
+    name: process.env.SHIPSTATION_FROM_NAME || siteConfig.name,
     street1: process.env.SHIPSTATION_FROM_STREET || "",
     city: process.env.SHIPSTATION_FROM_CITY || "",
     state: process.env.SHIPSTATION_FROM_STATE || "",

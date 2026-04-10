@@ -7,6 +7,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { Loader2, Check, AlertCircle, ArrowLeft } from "lucide-react";
 import { createClient } from "@/lib/supabase/client";
+import { siteConfig } from "@/config/site";
 import { Suspense } from "react";
 
 function SetPasswordForm() {
@@ -190,8 +191,8 @@ function SetPasswordForm() {
         <div className="flex flex-col items-center mb-12">
           <div className="relative w-32 h-8 mb-8">
             <Image
-              src="https://imagedelivery.net/uVeQjPq2FGwRQ4qZs2ijJg/Logos/AmiNexa/AmiNexa_full_logo_white.png/public"
-              alt="AmiNexa"
+              src={siteConfig.logoUrl || "/logo.svg"}
+              alt={siteConfig.name}
               fill
               className="object-contain"
               priority

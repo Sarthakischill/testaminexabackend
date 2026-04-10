@@ -1,8 +1,9 @@
 import { MetadataRoute } from "next";
 import { products } from "@/lib/products";
 import { researchData } from "@/lib/research-data";
+import { siteConfig } from "@/config/site";
 
-const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://aminexa.net";
+const BASE_URL = siteConfig.url;
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const staticPages: MetadataRoute.Sitemap = [

@@ -1,5 +1,6 @@
 "use client";
 
+import { siteConfig } from "@/config/site";
 import React, { useEffect, useLayoutEffect, useRef, use } from 'react';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
@@ -183,7 +184,7 @@ export default function ProductCarouselPage({ params }: { params: Promise<{ id: 
                     {activeProduct.brand}
                   </span>
                   <span style={{ fontFamily: 'Helvetica, Arial, sans-serif' }} className="text-[9px] md:text-[10px] font-bold tracking-[0.15em] uppercase text-white/25">
-                    Distributed by AmiNexa
+                    {`Distributed by ${siteConfig.name}`}
                   </span>
                 </div>
               )}

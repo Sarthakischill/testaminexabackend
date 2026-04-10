@@ -6,6 +6,7 @@ import { Mail, MapPin, Clock, Send, CheckCircle, ArrowLeft } from "lucide-react"
 import Link from "next/link";
 import Image from "next/image";
 import Footer from "@/components/Footer";
+import { siteConfig } from "@/config/site";
 
 export default function ContactPage() {
   const [submitted, setSubmitted] = useState(false);
@@ -51,7 +52,7 @@ export default function ContactPage() {
       <header className="fixed top-0 inset-x-0 z-50 backdrop-blur-xl bg-[#050505]/80 border-b border-white/5">
         <div className="w-full px-4 sm:px-6 md:px-10 lg:px-14 xl:px-20 h-16 flex items-center justify-between">
           <Link href="/" className="relative w-28 h-7">
-            <Image src="https://imagedelivery.net/uVeQjPq2FGwRQ4qZs2ijJg/Logos/AmiNexa/AmiNexa_full_logo_white.png/public" alt="AmiNexa" fill className="object-contain object-left" priority />
+            <Image src={siteConfig.logoUrl || "/logo.svg"} alt={siteConfig.name} fill className="object-contain object-left" priority />
           </Link>
           <Link href="/" className="group flex items-center gap-2 text-white/40 hover:text-white transition-colors">
             <ArrowLeft className="w-4 h-4 group-hover:-translate-x-1 transition-transform" />
@@ -93,7 +94,7 @@ export default function ContactPage() {
           {/* Info Cards */}
           <div className="lg:col-span-2 flex flex-col gap-5">
             {[
-              { icon: Mail, label: "Email", value: "support@aminexa.net", sublabel: "General inquiries" },
+              { icon: Mail, label: "Email", value: siteConfig.supportEmail, sublabel: "General inquiries" },
               { icon: MapPin, label: "Location", value: "United States", sublabel: "Ships domestically" },
               { icon: Clock, label: "Response Time", value: "Within 24 hours", sublabel: "Monday – Friday" },
             ].map((item, idx) => (

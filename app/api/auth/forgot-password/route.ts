@@ -2,6 +2,7 @@ import { NextResponse } from "next/server";
 import { createAdminClient } from "@/lib/supabase/admin";
 import { getResend, FROM_EMAIL } from "@/lib/resend";
 import { emailWrapper, emailHeading, emailSubtext, emailButton } from "@/lib/emails/template";
+import { siteConfig } from "@/config/site";
 
 export async function POST(request: Request) {
   let body;
@@ -64,10 +65,10 @@ export async function POST(request: Request) {
     await getResend().emails.send({
       from: FROM_EMAIL,
       to: trimmedEmail,
-      subject: "Reset Your AmiNexa Password",
+      subject: `Reset Your ${siteConfig.name} Password`,
       html: emailWrapper(`
         ${emailHeading("Password Reset")}
-        ${emailSubtext(`Hi ${userName}, we received a request to reset your AmiNexa account password. Click the button below to choose a new password.`)}
+        ${emailSubtext(`Hi ${userName}, we received a request to reset your ${siteConfig.name} account password. Click the button below to choose a new password.`)}
 
         ${emailButton(actionLink, "Reset Password")}
 

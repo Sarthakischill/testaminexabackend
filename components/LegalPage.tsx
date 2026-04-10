@@ -2,6 +2,7 @@ import Link from "next/link";
 import { ArrowLeft } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import { siteConfig } from "@/config/site";
 
 interface LegalSection {
   title: string;
@@ -16,7 +17,7 @@ interface LegalPageProps {
   contactEmail?: string;
 }
 
-export default function LegalPage({ title, subtitle, lastUpdated, sections, contactEmail = "contact@aminexa.net" }: LegalPageProps) {
+export default function LegalPage({ title, subtitle, lastUpdated, sections, contactEmail = siteConfig.contactEmail }: LegalPageProps) {
   return (
     <main className="relative min-h-screen w-full bg-[#050505] text-white font-sans">
       <Navbar />

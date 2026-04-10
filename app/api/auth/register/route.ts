@@ -2,6 +2,7 @@ import { NextResponse } from "next/server";
 import { createAdminClient } from "@/lib/supabase/admin";
 import { getResend, FROM_EMAIL } from "@/lib/resend";
 import { emailWrapper, emailHeading, emailSubtext, emailCard, emailLabel, emailButton } from "@/lib/emails/template";
+import { siteConfig } from "@/config/site";
 
 export async function POST(request: Request) {
   let body;
@@ -150,15 +151,15 @@ export async function POST(request: Request) {
     await getResend().emails.send({
       from: FROM_EMAIL,
       to: trimmedEmail,
-      subject: "Verify Your AmiNexa Account",
+      subject: `Verify Your ${siteConfig.name} Account`,
       html: emailWrapper(`
         ${emailHeading(`Welcome, ${trimmedName}.`)}
-        ${emailSubtext("Thank you for registering with AmiNexa. To complete your account setup, please verify your email address by clicking the button below. You'll then be prompted to create your password.")}
+        ${emailSubtext(`Thank you for registering with ${siteConfig.name}. To complete your account setup, please verify your email address by clicking the button below. You'll then be prompted to create your password.`)}
 
         ${emailButton(actionLink, "Verify &amp; Set Password")}
 
         <p style="font-family: Helvetica, Arial, sans-serif; color: #999; font-size: 13px; line-height: 1.6; margin: 28px 0 0;">
-          This link will expire in 24 hours. If you didn't create an account with AmiNexa, you can safely ignore this email.
+          This link will expire in 24 hours. If you didn't create an account with ${siteConfig.name}, you can safely ignore this email.
         </p>
 
         <hr style="border: none; border-top: 1px solid #eee; margin: 28px 0;" />

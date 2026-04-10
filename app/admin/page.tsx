@@ -25,6 +25,7 @@ import {
 import Image from "next/image";
 import { createClient } from "@/lib/supabase/client";
 import { toast } from "sonner";
+import { siteConfig } from "@/config/site";
 
 type Order = {
   id: string;
@@ -199,8 +200,8 @@ export default function AdminDashboard() {
           <div className="flex items-center gap-4">
             <div className="relative w-10 h-10">
               <Image
-                src="https://imagedelivery.net/uVeQjPq2FGwRQ4qZs2ijJg/Logos/AmiNexa/AmiNexa_favicon_128_white.png/public"
-                alt="AmiNexa"
+                src={siteConfig.faviconUrl || "/favicon.svg"}
+                alt={siteConfig.name}
                 fill
                 sizes="40px"
                 className="object-contain"
@@ -208,7 +209,7 @@ export default function AdminDashboard() {
             </div>
             <div>
               <h1 style={font} className="text-sm font-medium text-white tracking-wide">
-                AmiNexa Admin
+                {siteConfig.name} Admin
               </h1>
               <p style={font} className="text-[10px] text-white/30 tracking-[0.1em] uppercase">
                 Order Manager

@@ -1,8 +1,9 @@
 import type { Metadata } from "next";
 import { AdminToaster } from "./toaster";
+import { siteConfig } from "@/config/site";
 
 export const metadata: Metadata = {
-  title: "AmiNexa Admin | Order Manager",
+  title: `${siteConfig.name} Admin | Order Manager`,
   description: "Admin dashboard for managing orders",
   robots: {
     index: false,

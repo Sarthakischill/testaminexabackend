@@ -5,6 +5,7 @@ import { motion, useScroll, useTransform, Variants, MotionValue, useMotionValue 
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowDown } from "lucide-react";
+import { siteConfig } from "@/config/site";
 
 function lerp(v: number, inMin: number, inMax: number, outMin: number, outMax: number) {
   if (v <= inMin) return outMin;
@@ -201,7 +202,7 @@ function OrbitItem({
         transition={{ duration: 4 + (index % 3), repeat: Infinity, ease: "easeInOut" }}
         className="w-[40vw] h-[25vw] md:w-[25vw] md:h-[18vw] relative rounded-lg overflow-hidden shadow-2xl"
       >
-        <Image src={imageSrc} alt="AmiNexa hero image" fill sizes="(max-width: 768px) 40vw, 20vw" className="object-cover" />
+        <Image src={imageSrc} alt={`${siteConfig.name} hero image`} fill sizes="(max-width: 768px) 40vw, 20vw" className="object-cover" />
       </motion.div>
     </motion.div>
   );
@@ -451,10 +452,10 @@ export default function HeroScrollSequence({ onVideoReady }: { onVideoReady?: ()
         {/* Background Watermark */}
         <div className="absolute inset-0 flex items-center justify-center pointer-events-none z-0">
           <motion.div style={{ opacity: watermarkBlackOpacity }} className="absolute">
-            <Image src="https://imagedelivery.net/uVeQjPq2FGwRQ4qZs2ijJg/Logos/AmiNexa/AmiNexa_favicon_128_black.png/public" alt="" width={700} height={700} className="object-contain" loading="lazy" />
+            <Image src={siteConfig.faviconUrl || "/favicon.svg"} alt="" width={700} height={700} className="object-contain" loading="lazy" />
           </motion.div>
           <motion.div style={{ opacity: watermarkWhiteOpacity }} className="absolute">
-            <Image src="https://imagedelivery.net/uVeQjPq2FGwRQ4qZs2ijJg/Logos/AmiNexa/AmiNexa_favicon_128_white.png/public" alt="" width={700} height={700} className="object-contain" />
+            <Image src={siteConfig.faviconUrl || "/favicon.svg"} alt="" width={700} height={700} className="object-contain" />
           </motion.div>
         </div>
 
@@ -485,7 +486,7 @@ export default function HeroScrollSequence({ onVideoReady }: { onVideoReady?: ()
             {videoFailed && (
               <Image
                 src={stockImages[1]}
-                alt="AmiNexa hero"
+                alt={`${siteConfig.name} hero`}
                 fill
                 sizes="100vw"
                 className="object-cover"

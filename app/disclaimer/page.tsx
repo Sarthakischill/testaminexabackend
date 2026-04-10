@@ -1,8 +1,9 @@
 import LegalPage from "@/components/LegalPage";
+import { siteConfig } from "@/config/site";
 
 export const metadata = {
-  title: "Disclaimer — AmiNexa",
-  description: "AmiNexa disclaimer regarding research use only products and limitations of liability.",
+  title: `Disclaimer — ${siteConfig.name}`,
+  description: `${siteConfig.name} disclaimer regarding research use only products and limitations of liability.`,
 };
 
 export default function DisclaimerPage() {
@@ -10,7 +11,7 @@ export default function DisclaimerPage() {
     <LegalPage
       title="Disclaimer"
       lastUpdated="February 26, 2026"
-      subtitle="All products sold by AmiNexa are intended for research and laboratory use only. They are not intended for human or veterinary use, and are not to be used for food additives, drugs, or household chemicals."
+      subtitle={`All products sold by ${siteConfig.name} are intended for research and laboratory use only. They are not intended for human or veterinary use, and are not to be used for food additives, drugs, or household chemicals.`}
       sections={[
         {
           title: "General Disclaimer",
@@ -21,7 +22,7 @@ export default function DisclaimerPage() {
         {
           title: "Product Use Disclaimer",
           content: [
-            "All products sold by AmiNexa:",
+            `All products sold by ${siteConfig.name}:`,
             [
               "Are sold strictly for in-vitro research and laboratory use only",
               "Are not intended for human or veterinary use",
@@ -46,7 +47,7 @@ export default function DisclaimerPage() {
         {
           title: "Buyer Responsibility",
           content: [
-            "By purchasing products from AmiNexa, you represent and warrant that:",
+            `By purchasing products from ${siteConfig.name}, you represent and warrant that:`,
             [
               "You are at least 18 years of age",
               "You are purchasing products for legitimate research purposes only",
@@ -65,19 +66,19 @@ export default function DisclaimerPage() {
         {
           title: "Limitation of Liability",
           content: [
-            "In no event shall AmiNexa, its owners, employees, or affiliates be liable for any direct, indirect, incidental, special, consequential, or punitive damages arising out of or related to your use of our products or the information provided on this website. This includes, but is not limited to, damages for loss of profits, data, or other intangible losses.",
+            `In no event shall ${siteConfig.name}, its owners, employees, or affiliates be liable for any direct, indirect, incidental, special, consequential, or punitive damages arising out of or related to your use of our products or the information provided on this website. This includes, but is not limited to, damages for loss of profits, data, or other intangible losses.`,
           ],
         },
         {
           title: "Indemnification",
           content: [
-            "You agree to indemnify, defend, and hold harmless AmiNexa, its owners, officers, directors, employees, agents, and affiliates from and against any and all claims, damages, losses, liabilities, and expenses (including reasonable attorneys' fees) arising from:",
+            `You agree to indemnify, defend, and hold harmless ${siteConfig.name}, its owners, officers, directors, employees, agents, and affiliates from and against any and all claims, damages, losses, liabilities, and expenses (including reasonable attorneys' fees) arising from:`,
             [
               "Your use, misuse, or handling of our products, including any injury, illness, or damage resulting from administration to any human or animal",
               "Any statements, health claims, dosing recommendations, or representations you make to third parties regarding our products",
               "Any advertising, marketing, or promotional content you create referencing our products",
               "Any violation of this disclaimer or our Terms of Service",
-              "Any regulatory action brought against AmiNexa as a result of your actions or statements",
+              `Any regulatory action brought against ${siteConfig.name} as a result of your actions or statements`,
             ],
             "This indemnification survives the termination of your account.",
           ],
@@ -85,8 +86,8 @@ export default function DisclaimerPage() {
         {
           title: "Research Use Only",
           content: [
-            "All products sold by AmiNexa are intended strictly for in-vitro research, laboratory experimentation, and educational purposes. Products are not intended for human or veterinary use. Intended research applications include, but are not limited to, cell culture studies, protein analysis, receptor studies, and biochemical assays.",
-            "By purchasing from AmiNexa, you acknowledge that you are a qualified researcher or are purchasing for legitimate research purposes, and you agree to use all products in accordance with applicable laws and regulations.",
+            `All products sold by ${siteConfig.name} are intended strictly for in-vitro research, laboratory experimentation, and educational purposes. Products are not intended for human or veterinary use. Intended research applications include, but are not limited to, cell culture studies, protein analysis, receptor studies, and biochemical assays.`,
+            `By purchasing from ${siteConfig.name}, you acknowledge that you are a qualified researcher or are purchasing for legitimate research purposes, and you agree to use all products in accordance with applicable laws and regulations.`,
           ],
         },
         {

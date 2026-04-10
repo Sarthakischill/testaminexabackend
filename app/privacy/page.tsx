@@ -1,8 +1,9 @@
 import LegalPage from "@/components/LegalPage";
+import { siteConfig } from "@/config/site";
 
 export const metadata = {
-  title: "Privacy Policy — AmiNexa",
-  description: "How AmiNexa collects, uses, discloses, and safeguards your information.",
+  title: `Privacy Policy — ${siteConfig.name}`,
+  description: `How ${siteConfig.name} collects, uses, discloses, and safeguards your information.`,
 };
 
 export default function PrivacyPage() {
@@ -10,7 +11,7 @@ export default function PrivacyPage() {
     <LegalPage
       title="Privacy Policy"
       lastUpdated="February 26, 2026"
-      subtitle="At AmiNexa, we are committed to protecting your privacy. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit our website or make a purchase from us."
+      subtitle={`At ${siteConfig.name}, we are committed to protecting your privacy. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit our website or make a purchase from us.`}
       sections={[
         {
           title: "1. Information We Collect",
@@ -96,7 +97,7 @@ export default function PrivacyPage() {
               "Opt out of marketing communications",
               "Request a copy of your data in a portable format",
             ],
-            "To exercise these rights, contact us at contact@aminexa.net.",
+            `To exercise these rights, contact us at ${siteConfig.contactEmail}.`,
           ],
         },
         {

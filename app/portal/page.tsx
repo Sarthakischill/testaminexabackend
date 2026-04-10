@@ -10,6 +10,7 @@ import WarningSection from "@/components/WarningSection";
 import Footer from "@/components/Footer";
 import type { Product } from "@/lib/products";
 import { useCart } from "@/lib/cart-context";
+import { siteConfig } from "@/config/site";
 
 export default function PortalPage() {
   const { totalItems, openCart } = useCart();
@@ -404,7 +405,7 @@ export default function PortalPage() {
                   </span>
                 </div>
                 <p style={{ fontFamily: 'Helvetica, Arial, sans-serif' }} className="text-base md:text-lg text-white/40 font-light tracking-wide max-w-2xl">
-                  AmiNexa is the official authorized distributor of Amino Zero pre-filled peptide pen products. Amino Zero is an independent manufacturer.
+                  {siteConfig.name} is the official authorized distributor of Amino Zero pre-filled peptide pen products. Amino Zero is an independent manufacturer.
                 </p>
               </motion.div>
 
@@ -489,7 +490,7 @@ export default function PortalPage() {
               style={{ fontFamily: 'Helvetica, Arial, sans-serif' }} 
               className="text-lg md:text-xl text-white/60 font-light tracking-wide max-w-4xl mx-auto text-center pb-2"
             >
-              AmiNexa completely bypasses generic commercial compounding. Every compound undergoes a rigorous gauntlet of testing from initial crystallization to sub-zero transit.
+              {siteConfig.name} completely bypasses generic commercial compounding. Every compound undergoes a rigorous gauntlet of testing from initial crystallization to sub-zero transit.
             </motion.p>
           </div>
           

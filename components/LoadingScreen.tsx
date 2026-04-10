@@ -3,6 +3,7 @@
 import { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence, useMotionValue, useSpring, useTransform } from "framer-motion";
 import Image from "next/image";
+import { siteConfig } from "@/config/site";
 
 export default function LoadingScreen({ videoReady = false }: { videoReady?: boolean }) {
   const [loading, setLoading] = useState(true);
@@ -75,8 +76,8 @@ export default function LoadingScreen({ videoReady = false }: { videoReady?: boo
                 {/* Icon Container */}
                 <div className="relative w-10 h-10 md:w-12 md:h-12 shrink-0">
                   <Image 
-                    src="https://imagedelivery.net/uVeQjPq2FGwRQ4qZs2ijJg/Logos/AmiNexa/AmiNexa_favicon_128_white.png/public" 
-                    alt="AmiNexa Icon"
+                    src={siteConfig.faviconUrl || "/favicon.svg"} 
+                    alt={`${siteConfig.name} Icon`}
                     fill
                     priority
                     sizes="48px"
@@ -87,8 +88,8 @@ export default function LoadingScreen({ videoReady = false }: { videoReady?: boo
                 {/* Logotype Container */}
                 <div className="h-8 md:h-10 relative w-[120px] md:w-[150px]">
                   <Image 
-                    src="https://imagedelivery.net/uVeQjPq2FGwRQ4qZs2ijJg/Logos/AmiNexa/AmiNexa_logotype_white.png/public" 
-                    alt="AmiNexa Logo"
+                    src={siteConfig.logoUrl || "/logo.svg"} 
+                    alt={`${siteConfig.name} Logo`}
                     fill
                     priority
                     sizes="150px"

@@ -3,10 +3,11 @@
 import { createContext, useContext, useReducer, useState, useEffect, useCallback, type ReactNode } from "react";
 import { type Product } from "@/lib/products";
 import { getBundleDiscount } from "@/lib/pricing";
+import { siteConfig } from "@/config/site";
 
-export const SHIPPING_FEE = 5.99;
-export const FREE_SHIPPING_THRESHOLD = 100;
-export const COLD_CHAIN_FEE = 8;
+export const SHIPPING_FEE = siteConfig.shippingFee;
+export const FREE_SHIPPING_THRESHOLD = siteConfig.freeShippingThreshold;
+export const COLD_CHAIN_FEE = siteConfig.coldChainFee;
 
 export type CartItem = {
   product: Product;
@@ -101,9 +102,9 @@ type CartContextValue = {
 
 const CartContext = createContext<CartContextValue | null>(null);
 
-const CART_STORAGE_KEY = "aminexa-cart";
+const CART_STORAGE_KEY = `${siteConfig.storagePrefix}-cart`;
 
-const COLD_CHAIN_STORAGE_KEY = "aminexa-cold-chain";
+const COLD_CHAIN_STORAGE_KEY = `${siteConfig.storagePrefix}-cold-chain`;
 
 export function CartProvider({ children }: { children: ReactNode }) {
   const [state, dispatch] = useReducer(cartReducer, { items: [], coldChain: false });

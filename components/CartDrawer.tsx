@@ -5,6 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { Minus, Plus, Trash2, ShoppingCart, Lock, Snowflake } from "lucide-react";
 import { useCart, SHIPPING_FEE, FREE_SHIPPING_THRESHOLD, COLD_CHAIN_FEE } from "@/lib/cart-context";
+import { siteConfig } from "@/config/site";
 import { getBundleDiscount } from "@/lib/pricing";
 
 interface CartDrawerProps {
@@ -41,8 +42,8 @@ export default function CartDrawer({ isOpen, onClose }: CartDrawerProps) {
         <div className="flex items-center justify-between px-6 md:px-8 pt-6 md:pt-8 pb-5 md:pb-6 border-b border-white/10 relative z-10">
           <div className="flex items-center gap-3">
             <Image
-              src="https://imagedelivery.net/uVeQjPq2FGwRQ4qZs2ijJg/Logos/AmiNexa/AmiNexa_favicon_128_white.png/public"
-              alt="AmiNexa"
+              src={siteConfig.faviconUrl || "/favicon.svg"}
+              alt={siteConfig.name}
               width={28}
               height={28}
               className="opacity-70"
