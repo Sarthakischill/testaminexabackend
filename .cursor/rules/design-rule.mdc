@@ -1,0 +1,95 @@
+---
+alwaysApply: true
+---
+
+Design System Guidelines
+
+
+
+Do not create one-off UI elements for each page
+
+
+
+    Reuse and extend existing components instead of redesigning them
+
+
+
+    Build a consistent design system:
+
+        Define base components (Button, Card, Input, Section)
+
+        Reuse them across the app with variations
+
+        Maintain consistent spacing, typography, maintain maxwidth/consistent padding to sections and its elements across the entire site and color usage
+
+    Avoid generic or “AI-generated looking” UI patterns
+
+    Prefer intentional, minimal, and structured layouts
+
+
+
+    Every design decision should feel:
+
+        purposeful
+
+        consistent
+
+        visually balanced
+
+    Do not introduce new styles randomly
+
+    Extend existing styles instead of creating new ones
+
+
+
+Component Design Rules
+
+
+
+    Before creating a new component, check if an existing one can be reused
+
+
+
+    Components should be:
+
+        composable
+
+        reusable
+
+        scalable
+
+    Avoid inline styling for one-off designs
+
+    Keep styling centralized and consistent
+
+
+
+Visual Quality Principles
+
+
+
+    Prioritize clarity over decoration
+
+    Use whitespace intentionally
+
+    Maintain strong visual hierarchy (headings, sections, spacing)
+
+    Animations should enhance experience, not distract
+
+    Avoid excessive effects unless explicitly required
+
+
+
+Design Goal
+
+
+
+The UI should feel:
+
+
+
+    crafted, not generated
+
+    consistent, not random
+
+    simple, but high quality
